@@ -5,57 +5,57 @@
     font-family: monospace, Arial, sans-serif;
 }
 
+/* ---------- BODY ---------- */
 body{
-    background: linear-gradient(120deg,#8dbdbe,#c7f0e6);
-    padding:20px;
+    background: linear-gradient(135deg,#8dbdbe,#c7f0e6);
+    padding:15px;
 }
 
-/* ---------- HEADINGS ---------- */
+/* ---------- SECTION TITLE ---------- */
 .section-title{
     text-align:center;
     background:#93edcf;
-    margin:30px auto 15px;
-    padding:12px;
-    width:85%;
-    border-radius:30px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
-    font-size:22px;
+    margin:25px auto 15px;
+    padding:12px 15px;
+    max-width:900px;
+    border-radius:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    font-size:clamp(18px,4vw,24px);
 }
 
-/* ---------- CONTAINER ---------- */
+/* ---------- BUTTON CONTAINER ---------- */
 .box{
-    width:90%;
+    max-width:1000px;
     margin:auto;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:15px;
+    padding:10px;
 }
 
-/* ---------- BUTTON STYLE ---------- */
+/* ---------- BUTTON ---------- */
 .btn{
     background:white;
-    padding:18px 25px;
-    min-width:260px;
+    padding:18px;
     text-align:center;
-    border-radius:25px;
+    border-radius:22px;
     border:2px solid #004b50;
-    font-size:16px;
-    font-weight:bold;
     cursor:pointer;
     transition:0.3s;
-    box-shadow:0 5px 12px rgba(0,0,0,0.25);
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
 }
 
 .btn a{
     text-decoration:none;
     color:#004b50;
+    font-weight:bold;
     display:block;
+    font-size:clamp(14px,3.5vw,16px);
 }
 
 .btn:hover{
     background:#004b50;
-    transform:scale(1.05);
+    transform:translateY(-4px);
 }
 
 .btn:hover a{
@@ -64,11 +64,22 @@ body{
 
 /* ---------- CODE BOX ---------- */
 .code-box{
-    width:85%;
+    max-width:900px;
     margin:15px auto;
     background:black;
     color:#00ffcc;
     padding:15px;
     border-radius:15px;
-    font-size:14px;
+    font-size:clamp(12px,3vw,14px);
+    overflow-x:auto;
+}
+
+/* ---------- SMALL SCREENS ---------- */
+@media (max-width:480px){
+    body{
+        padding:10px;
+    }
+    .btn{
+        padding:15px;
+    }
 }
