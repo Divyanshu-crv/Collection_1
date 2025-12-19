@@ -159,3 +159,89 @@ body{
     text-decoration:underline;
 }
 
+
+
+
+
+
+/* -------------------New changes add animations in ---------------- */
+/* ================= BUTTON ADVANCED ANIMATIONS ================= */
+
+/* Floating animation without hover */
+@keyframes floatBtn {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+/* Pulse glow animation */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(0,75,80,0.4),
+                    0 6px 15px rgba(0,0,0,0.25);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(0,75,80,0.9),
+                    0 10px 25px rgba(0,0,0,0.35);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0,75,80,0.4),
+                    0 6px 15px rgba(0,0,0,0.25);
+    }
+}
+
+/* Apply animations */
+.btn{
+    position: relative;
+    overflow: hidden;
+    animation: floatBtn 3.5s ease-in-out infinite,
+               glow 3s ease-in-out infinite;
+}
+
+/* Shine effect */
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.7),
+        transparent
+    );
+    transform:skewX(-25deg);
+    transition:0.6s;
+}
+
+.btn:hover::before{
+    left:130%;
+}
+
+/* Hover animation */
+.btn:hover{
+    background:#004b50;
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 15px 35px rgba(0,0,0,0.45),
+               0 0 30px rgba(0,255,204,0.9);
+}
+
+/* Text animation */
+.btn a{
+    transition:0.3s ease;
+}
+
+.btn:hover a{
+    color:#ffffff;
+    letter-spacing:1px;
+}
+
+/* Click bounce */
+.btn:active{
+    transform:scale(0.95);
+}
+
+/* =============================================================== */
+
